@@ -43,11 +43,11 @@ def rmax(env, gamma, m, R_max, epsilon, num_episodes, max_step = 6):
     ########################################################
 
     avg_scores = np.zeros(num_episodes)
+    total_score = 0
     for episode in range(num_episodes):
         s = env.reset()
         done = False
         t = 0 # step
-        total_score = 0
         while not done and t < max_step:
             best_a = np.argmax(Q[s])
             s_next, r, done, _ = env.step(best_a)
@@ -84,7 +84,7 @@ def rmax(env, gamma, m, R_max, epsilon, num_episodes, max_step = 6):
 def main():
 	env = FrozenLakeEnv(is_slippery=False)
 	print env.__doc__
-	Q = rmax(env, gamma = 0.99, m=10, R_max = 1, epsilon = 0.1, num_episodes = 10000)
+	Q = rmax(env, gamma = 0.99, m=20, R_max = 1, epsilon = 0.1, num_episodes = 10000)
 	render_single_Q(env, Q)
 
 
