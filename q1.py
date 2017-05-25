@@ -70,10 +70,10 @@ def rmax(env, gamma, m, R_max, epsilon, num_episodes, max_step = 6):
             t += 1
         avg_scores[episode] = total_score / (episode + 1)
 
-    plt.plot(range(num_episodes), avg_scores)
+    plt.plot(range(num_episodes))
     plt.xlabel('episodes')
     plt.ylabel('average score')
-    plt.savefig('avg_scores_m=' + str(m) + '.png')
+    plt.savefig('rmax_avg_scores_m=' + str(m) + '.png')
 
             
 
