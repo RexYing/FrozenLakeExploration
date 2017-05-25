@@ -82,7 +82,7 @@ def learn_Q_QLearning(env, num_episodes=10000, gamma = 0.99, lr = 0.1, e = 0.2, 
 
 def main():
 	env = FrozenLakeEnv(is_slippery=False)
-	Q = learn_Q_QLearning(env, num_episodes = 10000, gamma = 0.99, lr = 0.3, e = 0.8)
+	Q = learn_Q_QLearning(env, num_episodes = 10000, gamma = 0.99, lr = 0.3, e = 0.85)
 	render_single_Q(env, Q)
 
 
